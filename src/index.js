@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import About from "./components/About.tsx";
+// import Sidebar from "./components/Sidebar.tsx";
+import ChartsMaps from "./components/ChartsMaps.tsx";
+import Contact from "./components/Contact.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -12,8 +14,12 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/about",
-    element: <About />,
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/charts-and-maps",
+    element: <ChartsMaps />,
   },
 ]);
 

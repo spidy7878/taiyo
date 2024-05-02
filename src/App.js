@@ -1,12 +1,15 @@
 // App.js
-import "./index.css"
+import "./index.css";
+import Sidebar from "./components/shared/Sidebar.tsx";
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from "react";
 
 function App() {
   return (
-    <div className='font-bold text-7xl font-serif'>Hello World!</div>
+    <div class="flex h-screen bg-gray-200">
+      <Sidebar />
+      <div class="flex-1 p-10">Home Page</div>
+    </div>
   );
 }
 
