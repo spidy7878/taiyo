@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 // import Sidebar from "./components/Sidebar.tsx";
 import ChartsMaps from "./components/ChartsMaps.tsx";
-import Contact from "./components/Contact.tsx";
+import Contact from "./components/contact/Contact.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import store from "./redux/index.js";
 
 const router = createBrowserRouter([
   {
@@ -25,9 +27,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
