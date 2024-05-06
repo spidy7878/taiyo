@@ -28,10 +28,23 @@ const options = {
   plugins: {
     legend: {
       position: "top" as const,
+      labels: {
+        font: {
+          size: 14,
+          family: "Montserrat",
+          padding: 20,
+        },
+      },
     },
     title: {
       display: true,
       text: "Covid-19 Cases Fluctuations",
+      color: "black",
+      font: {
+        size: 20,
+        family: "Montserrat",
+        lineHeight: 1.4,
+      },
     },
   },
   scales: {
