@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./shared/Sidebar.tsx";
 import Navbar from "./shared/Navbar.tsx";
+import LineChart from "./dashboard/LineChart.tsx";
 
 const ChartsMaps = () => {
   return (
@@ -8,7 +9,9 @@ const ChartsMaps = () => {
       <Navbar />
       <div className="flex h-screen bg-gray-200">
         <Sidebar />
-        <div className="flex-1 p-10">Charts Page</div>
+        <div className="flex-1 p-10">
+          <LineChart />
+        </div>
       </div>
     </>
   );
