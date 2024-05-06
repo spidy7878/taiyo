@@ -10,7 +10,9 @@ function App() {
       <Navbar />
       <div class="flex h-screen bg-gray-200">
         <Sidebar />
-        <div class="flex-1 p-10">Home Page</div>
+        <div class="flex-1 p-10 font-semibol text-lg ">
+          Please navigate to the contact route from the Sidebar.
+        </div>
       </div>
     </>
   );

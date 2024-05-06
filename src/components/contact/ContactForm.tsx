@@ -1,22 +1,25 @@
-// src/components/contact/Contact.tsx
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contactActions";
+
 const Contact: React.FC = () => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [status, setStatus] = useState<string>("active");
   const dispatch = useDispatch();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newContact = {
       id: Date.now(),
-      name,
-      email,
+      firstName,
+      lastName,
+      status,
     };
     dispatch(addContact(newContact));
-    setName("");
-    setEmail("");
+    setFirstName("");
+    setLastName("");
+    setStatus("active");
   };
 
   return (
@@ -25,34 +28,66 @@ const Contact: React.FC = () => {
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="name"
+            htmlFor="firstName"
           >
-            Name
+            First Name
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name"
+            id="firstName"
             type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </div>
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="lastName"
+          >
+            Last Name
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="lastName"
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </div>
         <div className="mb-6">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="email"
+            htmlFor="status"
           >
-            Email
+            Status
           </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="email"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <div>
+            <label className="flex items-center cursor-pointer">
+              <input
+                type="radio"
+                className="form-radio text-green-500 h-4 w-4 mr-2"
+                name="status"
+                value="active"
+                checked={status === "active"}
+                onChange={(e) => setStatus(e.target.value)}
+              />
+              <span>Active</span>
+            </label>
+            <label className="flex items-center cursor-pointer">
+              <input
+                type="radio"
+                className="form-radio text-red-500 h-4 w-4 mr-2"
+                name="status"
+                value="inactive"
+                checked={status === "inactive"}
+                onChange={(e) => setStatus(e.target.value)}
+              />
+              <span>Inactive</span>
+            </label>
+          </div>
         </div>
         <div className="flex items-center justify-between">
           <button
