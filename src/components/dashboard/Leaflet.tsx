@@ -61,7 +61,7 @@ const GlobalMap: React.FC = () => {
   );
 
   return (
-    <div className="text-center my-8 py-5 border-t border-gray-400">
+    <div className="text-center my-8 py-5 border-t border-gray-400 ">
       {globalLoading && (
         <div className="text-gray-600">Loading global data...</div>
       )}
@@ -80,7 +80,9 @@ const GlobalMap: React.FC = () => {
         Country-wise COVID-19 Data:
       </h2>
       <input
-        className="text-center border border-gray-300 rounded px-4 py-2 mb-4"
+        className={`text-center border border-gray-300 rounded px-4 py-2 mb-${
+          isLoading ? 16 : 8
+        }`}
         type="text"
         placeholder="Search by country name"
         value={searchTerm}
@@ -94,7 +96,7 @@ const GlobalMap: React.FC = () => {
             <MapContainer
               center={[data.countryInfo.lat, data.countryInfo.long]}
               zoom={4}
-              className="h-full w-full"
+              className="h-full w-full relative z-0"
               scrollWheelZoom={false}
             >
               <TileLayer

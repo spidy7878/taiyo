@@ -3,7 +3,7 @@ import React from "react";
 const Sidebar = ({ showSidebar = false }) => {
   return (
     <div
-      className={`bg-gray-800 w-64 h-full text-white fixed top-16 left-0 z-50 ${
+      className={`bg-gray-800 w-64 h-full text-white fixed top-14 left-0 z-50 ${
         showSidebar ? "sm:flex" : "sm:flex hidden"
       } flex-col items-start pt-5`}
     >
