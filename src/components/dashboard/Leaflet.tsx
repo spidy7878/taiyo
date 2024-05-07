@@ -61,7 +61,7 @@ const GlobalMap: React.FC = () => {
   );
 
   return (
-    <div className="text-center mt-10 py-5 border-t border-gray-400">
+    <div className="text-center my-8 py-5 border-t border-gray-400">
       {globalLoading && (
         <div className="text-gray-600">Loading global data...</div>
       )}
@@ -76,6 +76,9 @@ const GlobalMap: React.FC = () => {
           </ul>
         </div>
       )}
+      <h2 className="text-xl font-bold mb-8 block">
+        Country-wise COVID-19 Data:
+      </h2>
       <input
         className="text-center border border-gray-300 rounded px-4 py-2 mb-4"
         type="text"
@@ -87,13 +90,7 @@ const GlobalMap: React.FC = () => {
       {isError && <div>Error fetching data</div>}
       {data && (
         <>
-          <div
-            className="h-[30rem] w-full overflow-hidden"
-            style={{ padding: "2rem 0rem" }}
-          >
-            <h2 className="text-xl font-bold pb-16">
-              Country-wise COVID-19 Data:
-            </h2>{" "}
+          <div className="h-[30rem] w-full" style={{ padding: "1.5rem 0rem" }}>
             <MapContainer
               center={[data.countryInfo.lat, data.countryInfo.long]}
               zoom={4}

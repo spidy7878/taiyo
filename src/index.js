@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
-import ChartsMaps from "./components/ChartsMaps.tsx";
+import ChartsMaps from "./components/dashboard/ChartsMaps.tsx";
 import Contact from "./components/contact/Contact.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import store from "./redux/index.js";

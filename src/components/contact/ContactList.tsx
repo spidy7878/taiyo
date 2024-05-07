@@ -62,8 +62,8 @@ const ContactList: React.FC<Props> = ({ contacts = [] }) => {
       )}
       {/* If contacts is not empty then print the list of contacts */}
       {contacts.length > 0 && (
-        <div className="overflow-x-auto rounded-lg">
-          <div className="mt-10 border flex gap-6">
+        <div className=" rounded-lg">
+          <div className="mt-10 border flex flex-wrap gap-6">
             {contacts.map((contact) => (
               <div
                 key={contact.id}

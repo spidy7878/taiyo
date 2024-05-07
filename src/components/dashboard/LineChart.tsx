@@ -25,6 +25,7 @@ ChartJS.register(
 
 const options = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: "top" as const,
@@ -32,8 +33,9 @@ const options = {
         font: {
           size: 14,
           family: "Montserrat",
-          padding: 20,
+          lineHeight: 1.4,
         },
+        // padding: 30,
       },
     },
     title: {
@@ -109,7 +111,7 @@ const LineChart: React.FC = () => {
   const formattedData = formatData(data);
 
   return (
-    <div>
+    <div className="w-full my-4 sm:my-2 sm:h-[40rem] h-[26rem]">
       <Line options={options} data={formattedData} />
     </div>
   );
